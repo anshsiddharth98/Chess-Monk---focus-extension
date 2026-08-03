@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Chess Monk",
+  "version": "1.0",
+  "description": "This extension helps you focus on your chess games. By hides extra details and other stuff on screen & helps u focus just like a Monk.",
+  "icons": {
+    "16": "icons/chessmonk16.png",
+    "48": "icons/chessmonk48.png",
+    "128": "icons/chessmonk128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.chess.com/*",
+        "https://lichess.org/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
